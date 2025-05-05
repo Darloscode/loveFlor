@@ -10,14 +10,13 @@ body {
 }
 
 .wrapper {
-  height: 340px;
-  width: 300px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 70px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* o lo que necesites */
+  width: 100%;
+  position: relative; /* deja de ser absolute */
+  height: auto;
   z-index: 2;
   filter: drop-shadow(0 0 3px #333);
 }
@@ -184,28 +183,17 @@ body {
   right: -30px;
   border-right-color: transparent;
 }
-.wrapper .text {
-  width: 360px;
-  position: absolute;
-  top: -60px;
-  left: -10px;
-  right: 0;
-  bottom: auto;
-  font-size: 35px;
-  text-align: center;
-  font-family: "Indie Flower";
-}
-
+.wrapper .text,
 .wrapper .text2 {
-  width: 600px;
-  position: absolute;
-  top: 40px;
-  left: -145px;
-  right: 0;
-  bottom: auto;
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
+  height: 80px; /* Ajusta el alto como desees */
+  display: flex; /* Flexbox para centrar */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
   font-size: 35px;
   text-align: center;
   font-family: "Indie Flower";
+  position: relative; /* O quita position si no es necesario */
 }
 
 .whitespace {
@@ -293,7 +281,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 160px !important;
+  margin-top: 0px !important;
 }
 
 .gif-container img {
@@ -327,6 +315,10 @@ body {
 }
 
 @media (max-width: 600px) {
+  .wrapper {
+    margin-top: 50%;
+  }
+
   .wrapper .text {
     font-size: 22px;
     width: 90%;
@@ -348,7 +340,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 120px;
+    margin-top: 100px;
   }
 
   .download-section {
